@@ -45,6 +45,8 @@ describe Pantry do
       @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
       @ingredient3 = Ingredient.new({name: "Ground Beef", unit: "oz", calories: 100})
       @ingredient4 = Ingredient.new({name: "Bun", unit: "g", calories: 75})
+
+      @recipe1 = Recipe.new("Mac and Cheese")
     end
 
     it "Pantry can check if it has ingredients for recipe" do

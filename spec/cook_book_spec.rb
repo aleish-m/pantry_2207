@@ -56,7 +56,9 @@ describe CookBook do
     it "Cookbook finds the highest calorie recipe" do
       expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
     end
-
+    it "CookBook lists the ingredients needed for recipe" do
+      expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
+    end
   end
 
 end
