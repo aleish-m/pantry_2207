@@ -57,7 +57,7 @@ describe CookBook do
       expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
     end
     it "CookBook lists the ingredients needed for recipe" do
-      expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
+      expect(@cookbook.ingredients).to eq(["Cheese", "Macaroni", "Ground Beef", "Bun"])
     end
   end
 
