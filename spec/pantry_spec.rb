@@ -1,0 +1,41 @@
+require './lib/ingredient.rb'
+require './lib/pantry'
+
+describe Ingredient do
+
+  before :each do
+    @ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
+    @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 200})
+    @pantry = Pantry.new
+  end
+
+  describe 'initialize' do
+
+    it "Pantry exists" do
+      expect(@pantry).to be_an_instance_of(Pantry)
+
+    end
+
+  end
+
+  describe 'stock' do
+    xit "Pantry has a stock" do
+      expect(@pantry.stock).to eq({})
+    end
+
+    xit "Pantry can check its stock" do
+      expect(@pantry.stock_check(@ingredient1)).to eq(0)
+    end
+
+    xit "Pantry can re-stock" do
+      @pantry.restock(ingredient1, 5)
+      @pantry.restock(ingredient1, 10)
+      expect(@pantry.stock_check(@ingredient1)).to eq(15)
+    end
+
+    xit "can re-stock multiple ingredients" do
+      @pantry.restock(ingredient2, 7)
+      expect(@pantry.stock_check(@ingredient2)).to eq(7)
+    end
+  end
+end
