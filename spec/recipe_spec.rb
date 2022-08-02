@@ -27,18 +27,21 @@ describe Recipe do
 
   describe 'Recipe ingredients' do
 
-    xit "Recipe requires ingredients" do
+    it "Recipe requires ingredients" do
       expect(@recipe1.ingredients_required).to eq({})
     end
 
-    xit "Recipe adds ingredients and amount" do
+    it "Recipe adds ingredients and amount" do
       @recipe1.add_ingredient(@ingredient1, 2)
       @recipe1.add_ingredient(@ingredient1, 4)
       @recipe1.add_ingredient(@ingredient2, 8)
       expect(@recipe1.ingredients_required).to eq({@ingredient1 => 6, @ingredient2 => 8})
     end
 
-    xit "Recipe lists the ingredients" do
+    it "Recipe lists the ingredients it needs" do
+      @recipe1.add_ingredient(@ingredient1, 2)
+      @recipe1.add_ingredient(@ingredient1, 4)
+      @recipe1.add_ingredient(@ingredient2, 8)
       expect(@recipe1.ingredients).to eq([@ingredient1, @ingredient2])
     end
   end
