@@ -19,22 +19,22 @@ describe Ingredient do
   end
 
   describe 'stock' do
-    xit "Pantry has a stock" do
+    it "Pantry has a stock" do
       expect(@pantry.stock).to eq({})
     end
 
-    xit "Pantry can check its stock" do
+    it "Pantry can check its stock" do
       expect(@pantry.stock_check(@ingredient1)).to eq(0)
     end
 
-    xit "Pantry can re-stock" do
-      @pantry.restock(ingredient1, 5)
-      @pantry.restock(ingredient1, 10)
+    it "Pantry can re-stock" do
+      @pantry.restock(@ingredient1, 5)
+      @pantry.restock(@ingredient1, 10)
       expect(@pantry.stock_check(@ingredient1)).to eq(15)
     end
 
-    xit "can re-stock multiple ingredients" do
-      @pantry.restock(ingredient2, 7)
+    it "can re-stock multiple ingredients" do
+      @pantry.restock(@ingredient2, 7)
       expect(@pantry.stock_check(@ingredient2)).to eq(7)
     end
   end
