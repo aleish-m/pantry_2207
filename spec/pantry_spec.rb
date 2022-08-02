@@ -38,4 +38,13 @@ describe Pantry do
       expect(@pantry.stock_check(@ingredient2)).to eq(7)
     end
   end
+
+  describe 'Iteration 3' do
+    before :each do
+      @ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
+      @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
+      @ingredient3 = Ingredient.new({name: "Ground Beef", unit: "oz", calories: 100})
+      @ingredient4 = Ingredient.new({name: "Bun", unit: "g", calories: 75})
+    end
+  end
 end
