@@ -1,7 +1,7 @@
 require './lib/ingredient.rb'
 require './lib/pantry'
 
-describe Ingredient do
+describe Pantry do
 
   before :each do
     @ingredient1 = Ingredient.new({name: "Cheese", unit: "oz", calories: 50})
