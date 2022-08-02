@@ -47,11 +47,14 @@ describe Pantry do
       @ingredient4 = Ingredient.new({name: "Bun", unit: "g", calories: 75})
 
       @recipe1 = Recipe.new("Mac and Cheese")
+      @recipe1.add_ingredient(@ingredient1, 2)
+      @recipe1.add_ingredient(@ingredient2, 8)
     end
 
-    xit "Pantry can check if it has ingredients for recipe" do
+    it "Pantry can check if it has ingredients for recipe" do
       @pantry.restock(@ingredient1, 10)
       @pantry.restock(@ingredient1, 10)
+      expect(@pantry.stock_check(@ingredient1)).to eq(20)
       expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
 
       @pantry.restock(@ingredient2, 7)
