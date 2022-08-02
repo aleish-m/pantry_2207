@@ -50,6 +50,9 @@ describe CookBook do
       @recipe2.add_ingredient(@ingredient4, 1)
     end
 
+    it "Cookbook finds the highest calorie recipe" do
+      expect(@cookbook.highest_calorie_meal).to eq(@recipe2)
+    end
 
   end
 
