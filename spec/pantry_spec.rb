@@ -46,5 +46,19 @@ describe Pantry do
       @ingredient3 = Ingredient.new({name: "Ground Beef", unit: "oz", calories: 100})
       @ingredient4 = Ingredient.new({name: "Bun", unit: "g", calories: 75})
     end
+
+    it "Pantry can check if it has ingredients for recipe" do
+      @pantry.restock(@ingredient1, 10)
+      @pantry.restock(@ingredient1, 10)
+      expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
+
+      @pantry.restock(@ingredient2, 7)
+      expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
+
+      @pantry.restock(@ingredient2, 1)
+      expect(@pantry.enough_ingredients_for?(@recipe1)).to eq(false)
+
+    end
+
   end
 end
