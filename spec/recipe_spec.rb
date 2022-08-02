@@ -63,7 +63,7 @@ describe Recipe do
       @recipe2.add_ingredient(@ingredient4, 1)
     end
 
-    it "Recipe cna find the total calories" do
+    it "Recipe can find the total calories" do
       expect(@recipe1.total_calories).to eq(440)
       expect(@recipe2.total_calories).to eq(675)
     end
